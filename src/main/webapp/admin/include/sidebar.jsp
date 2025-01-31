@@ -43,7 +43,7 @@
               <ul>
                 <li> <a href="addCompany.jsp"><i class="bi bi-arrow-right-short"></i>Add Company</a>
                 </li>
-                <li> <a href="#"><i class="bi bi-arrow-right-short"></i>View Company</a>
+                <li> <a href="viewCompany.jsp"><i class="bi bi-arrow-right-short"></i>View Company</a>
                 </li>
               </ul>
             </li>

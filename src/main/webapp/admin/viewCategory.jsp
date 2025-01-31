@@ -124,7 +124,7 @@
  						s+="<td> <div class='d-flex align-items-center gap-3 cursor-pointer'>";
  						s+="<p class='mb-0'>"+response[key].catName+"</p></div></td>";
  						s+="<td><div class='table-actions d-flex align-items-center gap-3 fs-6'>";
- 						s+="<a class='text-warning catEdit' id='"+response[key].catId+"' data-bs-toggle='tooltip' data-bs-placement='bottom' aria-label='Edit'><i class='bi bi-pencil-fill'></i></a>";
+ 						s+="<a class='text-primary catEdit' id='"+response[key].catId+"' data-bs-toggle='tooltip' data-bs-placement='bottom' aria-label='Edit'><i class='bi bi-pencil-fill'></i></a>";
  						s+="<a class='text-danger catDelete' id='"+response[key].catId+"' data-bs-toggle='tooltip' data-bs-placement='bottom' aria-label='Delete'><i class='bi bi-trash-fill'></i></a>";
  						s+="</div></td>";
  						s+="</tr>"
