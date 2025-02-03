@@ -19,5 +19,9 @@ public class DbConnection {
 		}
 		return con;
 	}
+	
+	public static String Path() {
+		return "D:/MEME/01MeMe-Workplace/CAREPLUS/src/main/webapp/images";
+	}
 
 }
