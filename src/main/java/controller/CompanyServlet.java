@@ -62,7 +62,16 @@ public class CompanyServlet extends HttpServlet {
 			Gson  gson = gsonBuilder.create();
 			String JSONObject = gson.toJson(listComp);			    
 			out.print(JSONObject);	
-		}else if(secret.equals("inactiveCompany")) {
+		}else if(secret.equals("getCompanyByStatus")) {
+			CompanyDao cd=new CompanyDao();
+			List<Company> listComp =cd.getAllCompanyByStatus();
+			
+			GsonBuilder gsonBuilder = new GsonBuilder();
+			Gson  gson = gsonBuilder.create();
+			String JSONObject = gson.toJson(listComp);			    
+			out.print(JSONObject);	
+		}
+		else if(secret.equals("inactiveCompany")) {
 			int comId=Integer.parseInt(request.getParameter("comId"));
 			CompanyDao cd=new CompanyDao();
 			int msg=cd.inactiveStatusById(comId);

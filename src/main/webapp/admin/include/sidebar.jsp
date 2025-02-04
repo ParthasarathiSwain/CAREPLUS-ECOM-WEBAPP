@@ -56,7 +56,7 @@
               <ul>
                 <li> <a href="addProduct.jsp"><i class="bi bi-arrow-right-short"></i>Add Product</a>
                 </li>
-                <li> <a href=""><i class="bi bi-arrow-right-short"></i>View Product</a>
+                <li> <a href="viewProduct.jsp"><i class="bi bi-arrow-right-short"></i>View Product</a>
                 </li>
               </ul>
             </li>

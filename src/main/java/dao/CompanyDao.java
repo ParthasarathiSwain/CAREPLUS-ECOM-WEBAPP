@@ -56,6 +56,31 @@ public class CompanyDao {
 		}
 		return list;
 	}
+	public List<Company> getAllCompanyByStatus() {
+		ArrayList<Company> list=new ArrayList<>();
+		try {
+			Connection con=DbConnection.getConnection();
+			String query="select comId ,comName ,comEmail ,comPass ,comPhone,comAdd ,createdDate ,updatedDate ,status from companies where status='active'";
+			PreparedStatement ps=con.prepareStatement(query);
+			ResultSet rs=ps.executeQuery();
+			while (rs.next()) {
+				Company c=new Company();
+				c.setComId(rs.getInt(1));
+				c.setComName(rs.getString(2));
+				c.setComEmail(rs.getString(3));
+				c.setComPass(rs.getString(4));
+				c.setComPhone(rs.getString(5));
+				c.setComAdd(rs.getString(6));
+				c.setCreatedDate(rs.getString(7));
+				c.setUpdatedDate(rs.getString(8));
+				c.setStatus(rs.getString(9));
+				list.add(c);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
 
 	public int inactiveStatusById(int comId) {
 		int status=0;

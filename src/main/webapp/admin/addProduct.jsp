@@ -58,19 +58,19 @@
 							<div class="card-body">
 								<form id="myForm" >
 									<label  class="form-label">Product Name</label>
-									<input type="text" name="pName"  class="form-control form-control-lg mb-3" aria-label=".form-control-lg example">
+									<input type="text" name="pName"  class="form-control form-control-lg mb-3" aria-label=".form-control-lg example" required>
 									
 									<label  class="form-label">Description</label>
-									<input type="text" name="pDesc"  class="form-control form-control-lg mb-3"  aria-label=".form-control-lg example">
+									<input type="text" name="pDesc"  class="form-control form-control-lg mb-3"  aria-label=".form-control-lg example" required>
 									
 									<label  class="form-label">Quantity</label>
-									<input type="number" name="qty"  class="form-control form-control-lg mb-3" aria-label=".form-control-lg example">
+									<input type="number" name="qty"  class="form-control form-control-lg mb-3" aria-label=".form-control-lg example" required>
 									
 									<label  class="form-label">Price</label>
-									<input type="number" name="price"  class="form-control form-control-lg mb-3" aria-label=".form-control-lg example">
+									<input type="number" name="price"  class="form-control form-control-lg mb-3" aria-label=".form-control-lg example" required>
 									
 									<label  class="form-label">Category</label>
-									<select class="form-select" name="catId">
+									<select class="form-select" name="catId" required>
 										<option>--SELECT CATEGORY--</option>
 										<%
 											Connection con=DbConnection.getConnection();
@@ -89,18 +89,18 @@
 									</select>
 									
 									<label  class="form-label">Manufactured Date</label>
-									<input type="date" name="manfDate"  class="form-control form-control-lg mb-3" aria-label=".form-control-lg example">
+									<input type="date" name="manfDate"  class="form-control form-control-lg mb-3" aria-label=".form-control-lg example" required>
 									
 									<label  class="form-label">Company</label>
-									<select class="form-select" id="bindCompany" name="comId">
+									<select class="form-select" id="bindCompany" name="comId" required>
 										
 										
 									</select>
 									<label  class="form-label">Expiry date</label>
-									<input type="date" name="expDate"  class="form-control form-control-lg mb-3" aria-label=".form-control-lg example">
+									<input type="date" name="expDate"  class="form-control form-control-lg mb-3" aria-label=".form-control-lg example" required>
 									
 									<label  class="form-label">Image</label>
-									<input type="file" name="pImg"  class="form-control form-control-lg mb-3" aria-label=".form-control-lg example">
+									<input type="file" name="pImg"  class="form-control form-control-lg mb-3" aria-label=".form-control-lg example" required>
 									
 									<input type="hidden" name="secret" value="SaveServlet">
 									
@@ -129,7 +129,7 @@
  		$.ajax({
  			url:"../CompanyServlet",
   			method:"Post",
-  			data:{"secret":"viewCompany"},
+  			data:{"secret":"getCompanyByStatus"},
   			dataType:"json",
  			success : function(response){
  				let s="<option>--SELECT COMPANY--</option>";
