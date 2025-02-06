@@ -14,7 +14,6 @@
 
 <body>
 
-
   <!--start wrapper-->
   <div class="wrapper">
     	<%@ include file="include/header.jsp" %>  

@@ -17,9 +17,7 @@ import javax.servlet.http.Part;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import bean.Company;
 import bean.Product;
-import dao.CompanyDao;
 import dao.ProductDao;
 import utility.DbConnection;
 

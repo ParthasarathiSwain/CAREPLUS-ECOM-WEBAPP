@@ -1,0 +1,66 @@
+package controller;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import bean.User;
+import dao.LoginDao;
+
+
+@WebServlet("/LoginServlet")
+public class LoginServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+	}
+
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html");
+		PrintWriter out=response.getWriter();
+		String secret=request.getParameter("secret");
+		
+		if(secret.equals("loginOperation")) {
+			String uEmail=request.getParameter("uEmail");
+			String uPass=request.getParameter("uPass");
+			
+			LoginDao ld=new LoginDao();
+			User user=ld.ckeck_User_Exist_Or_Not_And_Return_User(uEmail,uPass);
+			
+			HttpSession session=request.getSession(false);  
+			
+			if (user.getCount()>0) {
+				if (user.getRoleId()==1 && user.getStatus().equals("active")) {
+					session.setAttribute("uId", user.getUId());
+					session.setAttribute("uName", user.getUName());
+					session.setAttribute("roleId", user.getRoleId());
+					session.setAttribute("uImg", user.getUImg());
+					out.print("admin");
+				} else if(user.getRoleId()==2 && user.getStatus().equals("active")) {
+					session.setAttribute("uId", user.getUId());
+					session.setAttribute("uName", user.getUName());
+					session.setAttribute("roleId", user.getRoleId());
+					session.setAttribute("uImg", user.getUImg());
+					out.print("customer");
+				}else {
+					out.print("UserNotActive");
+				}
+			} else {
+				out.print("UserNotExist");
+			}
+		}
+	}
+
+
+	
+
+}

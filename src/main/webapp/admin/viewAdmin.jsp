@@ -87,7 +87,7 @@
       </div>
       <div class="modal-body">
       		<form id="myForm" >
-       			<label  class="form-label">Admin Name</label>
+       			<label  class="form-label"> Admin Name</label>
 				<input type="text" name="uName" id="uName"  class="form-control form-control-lg mb-3" aria-label=".form-control-lg example" required>
 									
 				<label  class="form-label">Email</label>

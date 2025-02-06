@@ -109,6 +109,14 @@
                 <div class="menu-title">Support</div>
               </a>
             </li>
+            
+            <li>
+              <a href="../logout.jsp" >
+                <div class="parent-icon"><i class="bi bi-lock"></i>
+                </div>
+                <div class="menu-title">Logout</div>
+              </a>
+            </li>
           </ul>
           <!--end navigation-->
        </aside>

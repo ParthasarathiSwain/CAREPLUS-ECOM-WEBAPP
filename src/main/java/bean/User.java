@@ -16,5 +16,6 @@ public class User {
 	private String  status;
 	private int  roleId;
 	private String  roleName;
+	private int  count;
 }
  

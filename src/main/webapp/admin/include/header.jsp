@@ -36,18 +36,19 @@
               <li class="nav-item dropdown dropdown-large">
                 <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" data-bs-toggle="dropdown">
                   <div class="user-setting d-flex align-items-center gap-1">
-                    <img src="assets/images/avatars/avatar-1.png" class="user-img" alt="">
-                    <div class="user-name d-none d-sm-block">Jhon Deo</div>
+                  <% String img=(String)session.getAttribute("uImg"); %>
+                    <img src="../images/adminImg/<%=img %>" class="user-img" alt="">
+                    <div class="user-name d-none d-sm-block"><%out.print((String)session.getAttribute("uName")); %></div>
                   </div>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
                   <li>
                      <a class="dropdown-item" href="#">
                        <div class="d-flex align-items-center">
-                          <img src="assets/images/avatars/avatar-1.png" alt="" class="rounded-circle" width="60" height="60">
+                          <img src="../images/adminImg/<%=img %>" alt="" class="rounded-circle" width="60" height="60">
                           <div class="ms-3">
-                            <h6 class="mb-0 dropdown-user-name">Jhon Deo</h6>
-                            <small class="mb-0 dropdown-user-designation text-secondary">HR Manager</small>
+                            <h6 class="mb-0 dropdown-user-name"><%out.print((String)session.getAttribute("uName")); %></h6>
+                            <small class="mb-0 dropdown-user-designation text-secondary">Admin</small>
                           </div>
                        </div>
                      </a>
@@ -95,7 +96,7 @@
                     </li>
                     <li><hr class="dropdown-divider"></li>
                     <li>
-                      <a class="dropdown-item" href="authentication-signup-with-header-footer.html">
+                      <a class="dropdown-item" href="../logout.jsp">
                          <div class="d-flex align-items-center">
                            <div class="setting-icon"><i class="bi bi-lock-fill"></i></div>
                            <div class="setting-text ms-3"><span>Logout</span></div>
