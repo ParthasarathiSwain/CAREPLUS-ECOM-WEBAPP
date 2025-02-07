@@ -44,7 +44,7 @@
                                         <a href="index.jsp">Home </i></a>
                                     </li>
                                     <li class="has-children position-static">
-                                        <a href="#">Shop </a>
+                                        <a href="shop.jsp">Shop </a>
                                      </li>
                                     <li class="has-children">
                                         <a href="#">Pages </a>

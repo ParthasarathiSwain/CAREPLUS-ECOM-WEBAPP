@@ -97,7 +97,32 @@ public class ProductServlet extends HttpServlet {
 			Gson  gson = gsonBuilder.create();
 			String JSONObject = gson.toJson(list);			    
 			out.print(JSONObject);	
-		}else if(secret.equals("inactiveProduct")) {
+		}else if(secret.equals("getproductByCatId")) {
+			int catId=Integer.parseInt(request.getParameter("catId"));
+			ProductDao pd=new ProductDao();
+			List<Product> list=pd.getAllProductByCatId(catId);
+			GsonBuilder gsonBuilder = new GsonBuilder();
+			Gson  gson = gsonBuilder.create();
+			String JSONObject = gson.toJson(list);			    
+			out.print(JSONObject);	
+		}else if(secret.equals("getproductByComId")) {
+			int comId=Integer.parseInt(request.getParameter("comId"));
+			ProductDao pd=new ProductDao();
+			List<Product> list=pd.getAllProductByComId(comId);
+			GsonBuilder gsonBuilder = new GsonBuilder();
+			Gson  gson = gsonBuilder.create();
+			String JSONObject = gson.toJson(list);			    
+			out.print(JSONObject);	
+		}
+		else if(secret.equals("viewRecentProducts")) {
+			ProductDao pd=new ProductDao();
+			List<Product> list=pd.viewRecentProducts();
+			GsonBuilder gsonBuilder = new GsonBuilder();
+			Gson  gson = gsonBuilder.create();
+			String JSONObject = gson.toJson(list);			    
+			out.print(JSONObject);	
+		}
+		else if(secret.equals("inactiveProduct")) {
 			int pid=Integer.parseInt(request.getParameter("pid"));
 			ProductDao pd=new ProductDao();
 			int msg=pd.inactiveStatusById(pid);
