@@ -1,19 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Careplus | login </title>
+    <title>Careplus | Cart</title>
+
     <%@ include file="include/link.jsp" %>
 </head>
 
 <body>
 
-     <%@ include file="include/header.jsp" %>
-
+    <%@ include file="include/header.jsp" %>
 
     <!-- Breadcrumb Section Start -->
     <div class="section">
@@ -26,7 +27,7 @@
                         <li>
                             <a href="index.html"><i class="fa fa-home"></i> </a>
                         </li>
-                        <li class="active"> Login Page</li>
+                        <li class="active"> Shopping Cart Page</li>
                     </ul>
                 </div>
             </div>
@@ -36,91 +37,127 @@
     </div>
     <!-- Breadcrumb Section End -->
 
-    <!-- Login Section Start -->
+    <!-- Shopping Cart Section Start -->
     <div class="section section-margin">
         <div class="container">
+
             <div class="row">
-                <div class="col-lg-6 col-md-8 m-auto">
-                    <div class="login-wrapper">
+                <div class="col-12">
 
-                        <!-- Login Title & Content Start -->
-                        <div class="section-content text-center mb-5">
-                            <h2 class="title mb-2">Login</h2>
-                        </div>
-                        <!-- Login Title & Content End -->
+                    <!-- Cart Table Start -->
+                    <div class="cart-table table-responsive">
+                        <table class="table table-bordered">
 
+                            <!-- Table Head Start -->
+                            <thead>
+                                <tr>
+                                    <th class="pro-thumbnail">Image</th>
+                                    <th class="pro-title">Product</th>
+                                    <th class="pro-price">Price</th>
+                                    <th class="pro-quantity">Quantity</th>
+                                    <th class="pro-subtotal">Total</th>
+                                    <th class="pro-remove">Remove</th>
+                                </tr>
+                            </thead>
+                            <!-- Table Head End -->
 
+                            <!-- Table Body Start -->
+                            <tbody id="bindData">
+                               
+                               
+                               
+                            </tbody>
+                            <!-- Table Body End -->
 
-                        <form id="myForm">
-                            <div class="single-input-item mb-3">
-                                <input type="email" name="uEmail"  placeholder="Email or Username" required>
-                            </div>
-                            
-							<input type="hidden" name="secret" value="loginOperation">
-							
-                            <div class="single-input-item mb-3">
-                                <input type="password" name="uPass" placeholder=" Password" required>
-                            </div>
-
-                            <div class="single-input-item mb-3">
-                                <div class="login-reg-form-meta d-flex align-items-center justify-content-between">
-                                    <div class="remember-meta mb-3">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="rememberMe">
-                                            <label class="custom-control-label" for="rememberMe">Remember Me</label>
-                                        </div>
-                                    </div>
-                                    <a href="#" class="forget-pwd mb-3">Forget Password?</a>
-                                </div>
-                            </div>
-
-                            <div class="single-input-item mb-3 ">
-                                <input type="submit" class="btn btn-info bg-info" value="Login">
-                            </div>
-
-                            <div class="lost-password">
-                                <a href="register.jsp">Create an Account</a>
-                            </div>
-                        </form>
-
-
-
-
+                        </table>
                     </div>
+                    <!-- Cart Table End -->
+
+                    <!-- Cart Button Start -->
+                    <div class="cart-button-section">
+                        
+                        <a href="#" class="btn btn-danger btn-hover-dark">Clear Cart</a>
+                    </div>
+                    <!-- Cart Button End -->
+
                 </div>
             </div>
+
+            <div class="row mt-10 mb-n10">
+            <div class="col-lg-6 mb-10 "></div>
+               <div class="col-lg-6 mb-10 ">
+
+                    <!-- Cart Calculation Area Start -->
+                    <div class="cart-calculator-wrapper">
+
+                        <!-- Cart Calculate Items Start -->
+                        <div class="cart-calculate-items">
+
+                            <!-- Cart Calculate Items Title Start -->
+                            <h3 class="title">Cart Totals</h3>
+                            <!-- Cart Calculate Items Title End -->
+
+                            <!-- Responsive Table Start -->
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <tr>
+                                        <td>Sub Total</td>
+                                        <td id="subTotal"></td>
+                                    </tr>
+                                    
+                                    <tr class="total">
+                                        <td>Total</td>
+                                        <td class="total-amount" id="total" ></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <!-- Responsive Table End -->
+
+                        </div>
+                        <!-- Cart Calculate Items End -->
+
+                        <!-- Cart Checktout Button Start -->
+                        <a href="checkout.html" class="btn btn-primary btn-hover-dark mt-6">Proceed To Checkout</a>
+                        <!-- Cart Checktout Button End -->
+
+                    </div>
+                    <!-- Cart Calculation Area End -->
+
+                </div>
+            </div>
+
         </div>
     </div>
-    <!-- Login Section End -->
+    <!-- Shopping Cart Section End -->
 
     <%@ include file="include/footer.jsp" %>
 
 
     <!-- Mobile Menu Start -->
-    <!-- <div class="mobile-menu-wrapper">
+    <div class="mobile-menu-wrapper">
         <div class="offcanvas-overlay"></div>
 
-        Mobile Menu Inner Start
+        <!-- Mobile Menu Inner Start -->
         <div class="mobile-menu-inner">
 
-            Button Close Start
+            <!-- Button Close Start -->
             <div class="offcanvas-btn-close">
                 <i class="pe-7s-close"></i>
             </div>
-            Button Close End
+            <!-- Button Close End -->
 
-            Mobile Menu Inner Wrapper Start
+            <!-- Mobile Menu Inner Wrapper Start -->
             <div class="mobile-menu-inner-wrapper">
-                Mobile Menu Search Box Start
+                <!-- Mobile Menu Search Box Start -->
                 <div class="search-box-offcanvas">
                     <form>
                         <input class="search-input-offcanvas" type="text" placeholder="Search product...">
                         <button class="search-btn"><i class="pe-7s-search"></i></button>
                     </form>
                 </div>
-                Mobile Menu Search Box End
+                <!-- Mobile Menu Search Box End -->
 
-                Mobile Menu Start
+                <!-- Mobile Menu Start -->
                 <div class="mobile-navigation">
                     <nav>
                         <ul class="mobile-menu">
@@ -190,9 +227,9 @@
                         </ul>
                     </nav>
                 </div>
-                Mobile Menu End
+                <!-- Mobile Menu End -->
 
-                Language, Currency & Link Start
+                <!-- Language, Currency & Link Start -->
                 <div class="offcanvas-lag-curr mb-6">
                     <div class="header-top-lan-curr-link">
                         <div class="header-top-lan dropdown">
@@ -215,20 +252,20 @@
                         </div>
                     </div>
                 </div>
-                Language, Currency & Link End
+                <!-- Language, Currency & Link End -->
 
-                Contact Links/Social Links Start
+                <!-- Contact Links/Social Links Start -->
                 <div class="mt-auto bottom-0">
 
-                    Contact Links Start
+                    <!-- Contact Links Start -->
                     <ul class="contact-links">
                         <li><i class="fa fa-phone"></i><a href="#"> +012 3456 789</a></li>
                         <li><i class="fa fa-envelope-o"></i><a href="#"> info@example.com</a></li>
                         <li><i class="fa fa-clock-o"></i> <span>Monday - Sunday 9.00 - 18.00</span> </li>
                     </ul>
-                    Contact Links End
+                    <!-- Contact Links End -->
 
-                    Social Widget Start
+                    <!-- Social Widget Start -->
                     <div class="widget-social">
                         <a title="Facebook" href="#"><i class="fa fa-facebook-f"></i></a>
                         <a title="Twitter" href="#"><i class="fa fa-twitter"></i></a>
@@ -236,74 +273,57 @@
                         <a title="Youtube" href="#"><i class="fa fa-youtube"></i></a>
                         <a title="Vimeo" href="#"><i class="fa fa-vimeo"></i></a>
                     </div>
-                    Social Widget Ende
+                    <!-- Social Widget Ende -->
                 </div>
-                Contact Links/Social Links End
+                <!-- Contact Links/Social Links End -->
             </div>
-            Mobile Menu Inner Wrapper End
+            <!-- Mobile Menu Inner Wrapper End -->
 
         </div>
-        Mobile Menu Inner End
+        <!-- Mobile Menu Inner End -->
     </div>
-     --><!-- Mobile Menu End -->
+    <!-- Mobile Menu End -->
 
-    <%@ include file="include/script.jsp" %>
-    
-    <script type="text/javascript">
- 	$(document).ready(function(){
- 		console.log("Page Ready..");
- 		$("#myForm").on('submit',function(event){
- 			event.preventDefault();
-			var formdata=$(this).serialize();
- 			$.ajax({
- 				url     :"LoginServlet",
- 				method  :"Post",
- 				data    :formdata,
- 				success : function(response){
- 					if (response.trim()=="admin") {
- 						alert("Login Successfullly!");
- 						window.location.href="admin/dashboard.jsp";
-					}else if(response.trim()=="customer"){
-						alert("Login Successfullly!");
-						window.location.href="index.jsp";
-					}else if(response.trim()=="UserNotActive"){
-						$.toast({
-							text: "User Not Active !", 
-							heading: 'Login', 
-							icon: 'warning', 
-							hideAfter: 6000,
-							position: 'top-center', 
-							textAlign: 'left', 
-							loader: true
-						});
-					}else{
-						$.toast({
-							text: "Login Failed!", 
-							heading: 'Login', 
-							icon: 'error', 
-							hideAfter: 6000,
-							position: 'top-center', 
-							textAlign: 'left', 
-							loader: true
-						});
+    <!-- Scripts -->
+  <%@ include file="include/script.jsp" %>
+  <script type="text/javascript">
+  $(document).ready(function(){
+		getCartProduct();
+	});
+  function getCartProduct(){
+		$.ajax({
+			url:"CartServlet",
+			method:"Post",
+			data:{"secret":"getAllCartByUid"},
+			dataType:"json",
+			success : function (response){
+				let s="";
+				for(var key in response){
+					if(response.hasOwnProperty(key)){
+						s+="<tr> <td class='pro-thumbnail'>";
+						s+="<img class='fit-image' src='images/productImg/"+response[key].imgName+"' alt='Product' style='height: 70px; width: 70px;!important' /></td>";
+						s+="<td class='pro-title'>"+response[key].pname+"</td>";
+						s+="<td class='pro-price'><span >$"+response[key].basePrice+"</span></td>";
+						s+="<td class='pro-quantity'> <div class='quantity'> <div class='cart-plus-minus'>";
+						s+="<input class='cart-plus-minus-box' min='1' max='5' id='getQty' value='"+response[key].qty+"' type='number'>";
+						s+="</div> </div> </td><td class='pro-subtotal'><span>$"+response[key].totalPrice+"</span></td>";
+						s+="<td class='pro-remove'><a href='#'><i class='pe-7s-close' style='font-size: 64px; color: red;'></i></a></td></tr>";
 					}
- 					$("#myForm")[0].reset();
- 				},
-				error : function(response){
-				 	$.toast({
-							text: "Somthing went to wrong on server!", 
-							heading: 'Role', 
-							icon: 'error', 
-							hideAfter: 6000,
-							position: 'top-center', 
-							textAlign: 'left', 
-							loader: true
-						});
-				},
- 			});
- 		});
- 	});
- </script>
+				}
+				$("#bindData").html(s);
+			},
+			error : function (){
+				console.log("Something went to wrong on server!!!");
+			}
+		})
+	}
+  
+   
+ 
+
+	
+  </script>
+  
 </body>
 
 </html>

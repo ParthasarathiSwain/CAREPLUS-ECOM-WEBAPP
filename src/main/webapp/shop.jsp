@@ -1,4 +1,5 @@
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -244,7 +245,7 @@
   							s+="<img class='first-image' src='images/productImg/"+response[key].imgName+"' alt='Product' />";
   							s+="<img class='second-image fit-image' src='images/productImg/"+response[key].imgName+"' alt='Product' /> </a>";
   							s+="<div class='add-cart-btn'>";
-  							s+="<button class='btn btn-whited btn-hover-danger text-capitalize add-to-cart'>Add To Cart</button></div></div>";
+  							s+="<a href='singleProductView.jsp?pid="+response[key].pid+"'><button class='btn btn-whited btn-hover-danger text-capitalize add-to-cart'>View Product</button></a></div></div>";
   							s+="<div class='content'>  <h5 class='title'>";
   							s+="<a href='single-product.html'>"+response[key].pname+"</a></h5>";
   							s+="<span class='price'><span class='new'>$ "+response[key].price+"</span> </span>";
@@ -321,7 +322,7 @@
  	  							s+="<img class='first-image' src='images/productImg/"+response[key].imgName+"' alt='Product' />";
  	  							s+="<img class='second-image fit-image' src='images/productImg/"+response[key].imgName+"' alt='Product' /> </a>";
  	  							s+="<div class='add-cart-btn'>";
- 	  							s+="<button class='btn btn-whited btn-hover-danger text-capitalize add-to-cart'>Add To Cart</button></div></div>";
+ 	  							s+="<a href='singleProductView.jsp?pid="+response[key].pid+"'><button class='btn btn-whited btn-hover-danger text-capitalize add-to-cart'>View Product</button></a></div></div>";
  	  							s+="<div class='content'>  <h5 class='title'>";
  	  							s+="<a href='single-product.html'>"+response[key].pname+"</a></h5>";
  	  							s+="<span class='price'><span class='new'>$ "+response[key].price+"</span> </span>";
@@ -365,7 +366,7 @@
  	  							s+="<img class='first-image' src='images/productImg/"+response[key].imgName+"' alt='Product' />";
  	  							s+="<img class='second-image fit-image' src='images/productImg/"+response[key].imgName+"' alt='Product' /> </a>";
  	  							s+="<div class='add-cart-btn'>";
- 	  							s+="<button class='btn btn-whited btn-hover-danger text-capitalize add-to-cart'>Add To Cart</button></div></div>";
+ 	  							s+="<a href='singleProductView.jsp?pid="+response[key].pid+"'><button class='btn btn-whited btn-hover-danger text-capitalize add-to-cart'>View Product</button></a></div></div>";
  	  							s+="<div class='content'>  <h5 class='title'>";
  	  							s+="<a href='single-product.html'>"+response[key].pname+"</a></h5>";
  	  							s+="<span class='price'><span class='new'>$ "+response[key].price+"</span> </span>";

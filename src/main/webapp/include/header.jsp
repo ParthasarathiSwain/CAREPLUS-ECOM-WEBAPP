@@ -30,7 +30,7 @@
                         <!-- Header Logo Start -->
                         <div class="col-md-6 col-lg-3 col-xl-2 col-6">
                             <div class="header-logo">
-                                <a href="index.html"><img src="assets/images/logo/logo.png" alt="Site Logo" /></a>
+                                <a href="index.jsp"><img src="assets/images/logo/logo2.png" alt="Site Logo" style="height:70px;"/></a>
                             </div>
                         </div>
                         <!-- Header Logo End -->

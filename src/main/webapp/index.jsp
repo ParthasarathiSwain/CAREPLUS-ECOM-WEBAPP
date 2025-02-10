@@ -1,4 +1,5 @@
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -383,7 +384,7 @@
     <div class="modalquickview modal fade" id="quick-view" tabindex="-1" aria-labelledby="quick-view" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <button class="btn close" data-bs-dismiss="modal">×</button>
+                <button class="btn close" data-bs-dismiss="modal">Ã—</button>
                 <div class="row">
                     <div class="col-md-6 col-12">
 
