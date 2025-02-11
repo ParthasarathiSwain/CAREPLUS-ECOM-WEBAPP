@@ -36,21 +36,23 @@ public class CartServlet extends HttpServlet {
 		if(secret.equals("AddToCart")) {
 			int pid=Integer.parseInt(request.getParameter("hpid"));
 			double basePrice=Double.parseDouble(request.getParameter("hprice"));
-			int qty=1;
+			int qty=Integer.parseInt(request.getParameter("qty"));
 			double totalPrice=qty*basePrice;
 			HttpSession session=request.getSession(false);  
 			int uId=(int)session.getAttribute("uId");
-			
+
 			Cart cart=new Cart();
 			cart.setBasePrice(basePrice);
 			cart.setPid(pid);
 			cart.setQty(qty);
 			cart.setTotalPrice(totalPrice);
 			cart.setUId(uId);
-			
+
 			CartDao cd=new CartDao();
 			int msg=cd.addToCart(cart);
 			if (msg>0) {
+				int cartCount=cd.getCartCount(uId);
+				session.setAttribute("cartCount", cartCount);
 				response.sendRedirect("cart.jsp");
 			} else {
 				response.sendRedirect("error.jsp");
@@ -60,11 +62,23 @@ public class CartServlet extends HttpServlet {
 			int uId=(int)session.getAttribute("uId");
 			CartDao cd=new CartDao();
 			List<Cart> list =cd.getAllCartByUid(uId);
-			
+
 			GsonBuilder gsonBuilder = new GsonBuilder();
 			Gson  gson = gsonBuilder.create();
 			String JSONObject = gson.toJson(list);			    
 			out.print(JSONObject);	
+		}else if(secret.equals("RemoveCart")){
+			HttpSession session=request.getSession(false);  
+			int uId=(int)session.getAttribute("uId");
+			int pid=Integer.parseInt(request.getParameter("pid"));
+			CartDao cd=new CartDao();
+			int msg =cd.removeFromCart(uId,pid);
+			if (msg>0) {
+				out.print("done");
+			} else {
+				response.sendRedirect("error.jsp");
+			}
+
 		}
 	}
 

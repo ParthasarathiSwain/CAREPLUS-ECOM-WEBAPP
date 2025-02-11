@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Careplus | Cart</title>
+    <title>Careplus | Checkout</title>
 
     <%@ include file="include/link.jsp" %>
 </head>
@@ -15,6 +15,7 @@
 <body>
 
     <%@ include file="include/header.jsp" %>
+
 
     <!-- Breadcrumb Section Start -->
     <div class="section">
@@ -27,7 +28,7 @@
                         <li>
                             <a href="index.html"><i class="fa fa-home"></i> </a>
                         </li>
-                        <li class="active"> Shopping Cart Page</li>
+                        <li class="active"> Checkout Page</li>
                     </ul>
                 </div>
             </div>
@@ -37,101 +38,160 @@
     </div>
     <!-- Breadcrumb Section End -->
 
-    <!-- Shopping Cart Section Start -->
+    <!-- Checkout Section Start -->
     <div class="section section-margin">
         <div class="container">
+            
+            <div class="row mb-n4">
+                <div class="col-lg-6 col-12 mb-4">
 
-            <div class="row">
-                <div class="col-12">
+                    <!-- Checkbox Form Start -->
+                    <form action="#">
+                        <div class="checkbox-form">
 
-                    <!-- Cart Table Start -->
-                    <div class="cart-table table-responsive">
-                        <table class="table table-bordered">
+                            <!-- Checkbox Form Title Start -->
+                            <h3 class="title">Card Details</h3>
+                            <!-- Checkbox Form Title End -->
 
-                            <!-- Table Head Start -->
-                            <thead>
-                                <tr>
-                                    <th class="pro-thumbnail">Image</th>
-                                    <th class="pro-title">Product</th>
-                                    <th class="pro-price">Price</th>
-                                    <th class="pro-quantity">Quantity</th>
-                                    <th class="pro-subtotal">Total</th>
-                                    <th class="pro-remove">Remove</th>
-                                </tr>
-                            </thead>
-                            <!-- Table Head End -->
+                            <div class="row">
 
-                            <!-- Table Body Start -->
-                            <tbody id="bindData">
+                                <!-- Select Country Name Start -->
+                                
+                                <!-- Select Country Name End -->
+								<!-- Company Name Input Start -->
+                                <div class="col-md-12">
+                                    <div class="checkout-form-list">
+                                        <label>Card Number</label>
+                                        <input class="form-control" type="text">
+                                    </div>
+                                </div>
+                                <!-- Company Name Input End -->
+                                <!-- First Name Input Start -->
+                                <div class="col-md-6">
+                                    <div class="checkout-form-list">
+                                        <label>Expire Date <span class="required">*</span></label>
+                                        <input class="form-control" type="date">
+                                    </div>
+                                </div>
+                                <!-- First Name Input End -->
+
+                                <!-- Last Name Input Start -->
+                                <div class="col-md-6">
+                                    <div class="checkout-form-list">
+                                        <label>CVV<span class="required">*</span></label>
+                                        <input class="form-control" type="text">
+                                    </div>
+                                </div>
+                                <!-- Last Name Input End -->
+
+								 <h3 class="title">Address</h3>
+
+                                <!-- State or Country Input Start -->
+                                <div class="col-md-6">
+                                    <div class="checkout-form-list">
+                                        <label>State / County <span class="required">*</span></label>
+                                        <input placeholder="" type="text">
+                                    </div>
+                                </div>
+                                <!-- State or Country Input End -->
+
+                                <!-- Postcode or Zip Input Start -->
+                                <div class="col-md-6">
+                                    <div class="checkout-form-list">
+                                        <label>Postcode / Zip <span class="required">*</span></label>
+                                        <input placeholder="" type="text">
+                                    </div>
+                                </div>
+                                <!-- Postcode or Zip Input End -->
+
+                                <!-- Email Address Input Start -->
+                                <div class="col-md-6">
+                                    <div class="checkout-form-list">
+                                        <label>Email Address <span class="required">*</span></label>
+                                        <input placeholder="" type="email">
+                                    </div>
+                                </div>
+                                <!-- Email Address Input End -->
+
+                                <!-- Phone Number Input Start -->
+                                <div class="col-md-6">
+                                    <div class="checkout-form-list">
+                                        <label>Phone <span class="required">*</span></label>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                                <!-- Phone Number Input End -->
+
                                
-                               
-                               
-                            </tbody>
-                            <!-- Table Body End -->
 
-                        </table>
-                    </div>
-                    <!-- Cart Table End -->
-
-                    <!-- Cart Button Start -->
-                    <div class="cart-button-section">
-                        
-                        <a href="#" class="btn btn-danger btn-hover-dark">Clear Cart</a>
-                    </div>
-                    <!-- Cart Button End -->
-
-                </div>
-            </div>
-
-            <div class="row mt-10 mb-n10">
-            <div class="col-lg-6 mb-10 "></div>
-               <div class="col-lg-6 mb-10 ">
-
-                    <!-- Cart Calculation Area Start -->
-                    <div class="cart-calculator-wrapper">
-
-                        <!-- Cart Calculate Items Start -->
-                        <div class="cart-calculate-items">
-
-                            <!-- Cart Calculate Items Title Start -->
-                            <h3 class="title">Cart Totals</h3>
-                            <!-- Cart Calculate Items Title End -->
-
-                            <!-- Responsive Table Start -->
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <tr>
-                                        <td>Sub Total</td>
-                                        <td id="subTotal"></td>
-                                    </tr>
-                                    
-                                    <tr class="total">
-                                        <td>Total</td>
-                                        <td class="total-amount" id="total" ></td>
-                                    </tr>
-                                </table>
                             </div>
-                            <!-- Responsive Table End -->
 
+                            
                         </div>
-                        <!-- Cart Calculate Items End -->
-
-                        <!-- Cart Checktout Button Start -->
-                        <a href="checkout.jsp" class="btn btn-primary btn-hover-dark mt-6">Proceed To Checkout</a>
-                        <!-- Cart Checktout Button End -->
-
-                    </div>
-                    <!-- Cart Calculation Area End -->
+                    </form>
+                    <!-- Checkbox Form End -->
 
                 </div>
-            </div>
 
+                <div class="col-lg-6 col-12 mb-4">
+
+                    <!-- Your Order Area Start -->
+                    <div class="your-order-area border">
+
+                        <!-- Title Start -->
+                        <h3 class="title">Your order</h3>
+                        <!-- Title End -->
+
+                        <!-- Your Order Table Start -->
+                        <div class=" table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <td>#</td>
+                                     <td>Name</td>
+                                     <td>Qantity</td>
+                                     <td>Price</td>
+                                     <td>Total</td>
+                                </thead>
+                              
+                                <tbody id="bindData">
+                                    
+                                </tbody>
+                                 <!-- Table Footer Start -->
+                                <tfoot>
+                                    
+                                    <tr class="order-total" style="font-size:20px;!important">
+                                        <th class="text-start ps-0">Order Total</th>
+                                        <td class="text-end pe-0"><strong style="font-size:20px;!important">$<span class="amount" id="total" ></span></strong></td>
+                                    </tr>
+                                </tfoot>
+                                <!-- Table Footer End -->
+
+                            </table>
+                           
+                        </div>
+                        <!-- Your Order Table End -->
+
+                         <div class="payment-accordion-order-button">
+                            <div class="order-button-payment">
+                                <button class="btn btn-primary btn-hover-secondary rounded-0 w-100">Place Order</button>
+                            </div>
+                        </div>
+                        <!-- Payment Accordion Order Button End -->
+                    </div>
+                    <!-- Your Order Area End -->
+                </div>
+            </div>
         </div>
     </div>
-    <!-- Shopping Cart Section End -->
+    <!-- Checkout Section End -->
 
     <%@ include file="include/footer.jsp" %>
 
+
+    <a href="#" class="scroll-top show" id="scroll-top">
+        <i class="arrow-top pe-7s-angle-up-circle"></i>
+        <i class="arrow-bottom pe-7s-angle-up-circle"></i>
+    </a>
 
     <!-- Mobile Menu Start -->
     <div class="mobile-menu-wrapper">
@@ -285,8 +345,9 @@
     <!-- Mobile Menu End -->
 
     <!-- Scripts -->
-  <%@ include file="include/script.jsp" %>
-  <script type="text/javascript">
+   <%@ include file="include/script.jsp" %>
+   
+   <script type="text/javascript">
   $(document).ready(function(){
 		getCartProduct();
 	});
@@ -300,21 +361,20 @@
 				console.log(response);
 				let result=0;
 				let s="";
+				let i=1;
 				for(var key in response){
 					if(response.hasOwnProperty(key)){
-						s+="<tr> <td class='pro-thumbnail'>";
-						s+="<img class='fit-image' src='images/productImg/"+response[key].imgName+"' alt='Product' style='height: 70px; width: 70px;!important' /></td>";
-						s+="<td class='pro-title'>"+response[key].pname+"</td>";
-						s+="<td class='pro-price'><span >$"+response[key].basePrice+"</span></td>";
-						s+="<td class='pro-quantity'> <div class='quantity'> <div class='cart-plus-minus'>";
-						s+="<input class='cart-plus-minus-box'  id='getQty' value='"+response[key].qty+"' type='number' readonly>";
-						s+="</div> </div> </td><td class='pro-subtotal'><span>$"+response[key].totalPrice+"</span></td>";
-						s+="<td class='pro-remove'><a href='#' class='deleteCart' id='"+response[key].pid+"'><i class='pe-7s-close' style='font-size: 64px; color: red;'></i></a></td></tr>";
+						s+="<tr><td>"+i+"</td>";
+						s+="<td>"+response[key].pname+"</td>";
+						s+="<td>"+response[key].qty+"</td>";
+						s+="<td>"+response[key].basePrice+"</td>";
+						s+="<td>"+response[key].totalPrice+"</td>";
+						s+="</tr>";
 						result+=response[key].totalPrice;
+						i++;
 					}
 				}
 				$("#bindData").html(s);
-				$("#subTotal").text(result);
 				$("#total").text(result);
 			},
 			error : function (){
@@ -322,58 +382,7 @@
 			}
 		})
 	}
-  
-  $(document).on('click','.deleteCart',function(){
-		var pid=$(this).attr('id');
-		
-			$.ajax({
-				url: "CartServlet",
-	 			method:"Post",
-				data:{"secret":"RemoveCart","pid":pid},
-				success : function(response){
-					if(response.trim()=="done"){
-						$.toast({
-							text: "Product Removed Successfully!!!", 
-							heading: 'Cart', 
-							icon: 'success', 
-							hideAfter: 6000,
-							position: 'top-center', 
-							textAlign: 'left', 
-							loader: true
-					});
-					}else{
-						$.toast({
-							text: "Product Not Removed!!!", 
-							heading: 'Cart', 
-							icon: 'error', 
-							hideAfter: 6000,
-							position: 'top-center', 
-							textAlign: 'left', 
-							loader: true
-					    });
-					}
-					getCartProduct();
-				},
-				error : function(){
-					$.toast({
-						text: "Something Went Wrong On Server!!!", 
-						heading: 'Cart', 
-						icon: 'error', 
-						hideAfter: 6000,
-						position: 'top-center', 
-						textAlign: 'left', 
-						loader: true
-				   });
-				}
-				
-			})
-		
-	})
- 
-
-	
   </script>
-  
 </body>
 
 </html>

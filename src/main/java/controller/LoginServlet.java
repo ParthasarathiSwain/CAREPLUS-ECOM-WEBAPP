@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import bean.User;
+import dao.CartDao;
 import dao.LoginDao;
 
 
@@ -50,6 +51,11 @@ public class LoginServlet extends HttpServlet {
 					session.setAttribute("uName", user.getUName());
 					session.setAttribute("roleId", user.getRoleId());
 					session.setAttribute("uImg", user.getUImg());
+					
+					CartDao cd= new CartDao();
+					int cartCount=cd.getCartCount(user.getUId());
+					session.setAttribute("cartCount", cartCount);
+					
 					out.print("customer");
 				}else {
 					out.print("UserNotActive");

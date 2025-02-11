@@ -50,7 +50,7 @@
                                         <a href="#">Pages </a>
                                     </li>
                                     <li class="has-children">
-                                        <a href="#">Blog </a>
+                                        <a href="cart.jsp">Cart </a>
                                         
                                     </li>
                                     <li><a href="about.html">About</a></li>
@@ -74,9 +74,9 @@
                                   <a href="#" class="header-action-btn"><i class="pe-7s-user"></i></a>
                                 </div>
                                 
-                                <a href="#" class="header-action-btn header-action-btn-cart">
+                                <a href="" class="header-action-btn header-action-btn-cart">
                                     <i class="pe-7s-cart"></i>
-                                    <span class="header-action-num">3</span>
+                                    <span class="header-action-num">0</span>
                                 </a>
                                 <a href="login.jsp">Login </a><p>|</p>
                                 <a href="register.jsp">Reg </a>
@@ -89,9 +89,10 @@
 									</a>
                                 </div>
                                 
-                                <a href="#" class="header-action-btn header-action-btn-cart">
+                                <a href="cart.jsp" class="header-action-btn header-action-btn-cart">
                                     <i class="pe-7s-cart"></i>
-                                    <span class="header-action-num"></span>
+                                    <% String cartCount=session.getAttribute("cartCount")+""; %>
+                                    <span class="header-action-num"><%out.print(cartCount==null?0:cartCount); %></span>
                                 </a>
                                 
                                 <p><span><%=name %></span>|</p> 

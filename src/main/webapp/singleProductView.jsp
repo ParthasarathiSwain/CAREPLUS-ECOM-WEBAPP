@@ -132,31 +132,30 @@
                         </p>
                         <!-- Description End -->
 
-         
+         			<form id="myForm" action="CartServlet" method="post">
                         <!-- Quantity Start -->
-                        <!-- <div class="quantity d-flex align-items-center mb-5">
+                         <div class="quantity d-flex align-items-center mb-5">
                             <span class="me-2"><strong>Qty: </strong></span>
-                            <div class="cart-plus-minus">
-                                <input class="cart-plus-minus-box" value="1" type="text">
-                                <div class="dec qtybutton"></div>
-                                <div class="inc qtybutton"></div>
+                            <div >
+                                <input value="1" name="qty" id="originalQty" min="1" max="5" type="number" class="form-control">
+                                
                             </div>
-                        </div> -->
+                        </div> 
                         <!-- Quantity End -->
 
                         <!-- Cart Button Start -->
                         <div class="cart-btn mb-4">
                             <div class="add-to_cart">
-                              <form id="myForm" action="CartServlet" method="post">
+                              
                               		<input type="hidden" name="hpid" id="hpid" >
                               		<input type="hidden" name="hprice" id="hprice">
                               		<input type="hidden" name="secret" value="AddToCart">
                               		<input class="btn btn-dark btn-hover-primary" type="submit" value="Add To Cart">
-                              </form>
+                              
                             </div>
                         </div>
                         <!-- Cart Button End -->
-
+					</form>
                         <!-- Action Button Start -->
                         <div class="actions border-bottom mb-4 pb-4">
                             <a href="compare.html" title="Compare" class="action compare"><i class="pe-7s-refresh-2"></i> Compare</a>
@@ -869,6 +868,21 @@
 
     <!-- Scripts -->
   <%@ include file="include/script.jsp" %>
+  
+  
+  <script type="text/javascript">
+	$(document).ready(function(){  		  		
+		$("#originalQty").change(function () {
+			const qty=$('#originalQty').val();
+			const price=$('#hprice').val();  	
+			
+			$('#pPrice').html(qty*price); 
+		});
+	});
+</script>
+  
+  
+  
   
   <script type="text/javascript">
   	$(document).ready(function(){

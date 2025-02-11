@@ -57,4 +57,41 @@ public class CartDao {
 		return list;
 	}
 
+	public int removeFromCart(int uId, int pid) {
+		int status=0;
+		try {
+			Connection con=DbConnection.getConnection();
+			String query="delete from Cart where pid=? and uId=?";
+			PreparedStatement ps=con.prepareStatement(query);
+			ps.setInt(1, pid);
+			ps.setInt(2, uId);
+			status=ps.executeUpdate();
+			ps.close();
+			con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return status;
+	}
+
+	public int getCartCount(int uId) {
+		int status=0;
+		try {
+			Connection con=DbConnection.getConnection();
+			String query="SELECT count(distinct pid) FROM careplus.cart where uid=?";
+			PreparedStatement ps=con.prepareStatement(query);
+			ps.setInt(1, uId);
+			ResultSet rs=ps.executeQuery();
+			while (rs.next()) {
+				status=rs.getInt(1);
+			}
+			rs.close();
+			ps.close();
+			con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return status;
+	}
+
 }
