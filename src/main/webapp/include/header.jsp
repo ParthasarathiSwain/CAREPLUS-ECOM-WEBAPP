@@ -40,21 +40,39 @@
 
                             <div class="main-menu">
                                 <ul>
+                                <%
+                                    String name2=(String)session.getAttribute("uName");
+                                    if(name2=="" || name2==null){
+                                 %>
                                     <li class="has-children">
                                         <a href="index.jsp">Home </i></a>
                                     </li>
                                     <li class="has-children position-static">
                                         <a href="shop.jsp">Shop </a>
                                      </li>
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                    
+                                  <%    	
+                                    }else{
+                                  %>
+                                  <li class="has-children">
+                                        <a href="index.jsp">Home </i></a>
+                                    </li>
+                                    <li class="has-children position-static">
+                                        <a href="shop.jsp">Shop </a>
+                                     </li>
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
                                     <li class="has-children">
-                                        <a href="#">Pages </a>
+                                        <a href="myAccount.jsp">My Account </a>
                                     </li>
                                     <li class="has-children">
                                         <a href="cart.jsp">Cart </a>
-                                        
                                     </li>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                  <%
+                                    }
+                                  %>
                                 </ul>
                             </div>
 

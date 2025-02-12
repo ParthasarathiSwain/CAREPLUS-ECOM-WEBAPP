@@ -90,6 +90,17 @@
               <a href="javascript:;" class="has-arrow">
                 <div class="parent-icon"><i class="bi bi-grid"></i>
                 </div>
+                <div class="menu-title">Orders</div>
+              </a>
+              <ul>
+                <li> <a href="viewOrder.jsp"><i class="bi bi-arrow-right-short"></i>View Order</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="javascript:;" class="has-arrow">
+                <div class="parent-icon"><i class="bi bi-grid"></i>
+                </div>
                 <div class="menu-title">Admin</div>
               </a>
               <ul>

@@ -125,4 +125,24 @@ public class CustomerDao {
 		return status;
 	}
 
+	public int UpdateMyAccount(User u) {
+		int status=0;
+		try {
+		   Connection con=DbConnection.getConnection();
+		   String query="update user set uName=?,uEmail=?,uAdd=?,uPhone=?,updatedDate=now() where roleId=2 and uId=?";
+		   PreparedStatement  ps=con.prepareStatement(query);
+		   ps.setString(1, u.getUName());
+		   ps.setString(2, u.getUEmail());
+		   ps.setString(3, u.getUAdd());
+		   ps.setString(4, u.getUPhone());
+		   ps.setInt(5, u.getUId());
+		   status=ps.executeUpdate();
+		   ps.close();
+		   con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return status;
+	}
+
 }

@@ -10,6 +10,9 @@
     <title>Careplus | Checkout</title>
 
     <%@ include file="include/link.jsp" %>
+     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+     <script src="assets/js/vendor/modernizr-3.11.7.min.js"></script>
 </head>
 
 <body>
@@ -46,91 +49,62 @@
                 <div class="col-lg-6 col-12 mb-4">
 
                     <!-- Checkbox Form Start -->
-                    <form action="#">
+                    <form id="myForm" >
                         <div class="checkbox-form">
-
-                            <!-- Checkbox Form Title Start -->
                             <h3 class="title">Card Details</h3>
-                            <!-- Checkbox Form Title End -->
-
                             <div class="row">
 
-                                <!-- Select Country Name Start -->
-                                
-                                <!-- Select Country Name End -->
-								<!-- Company Name Input Start -->
                                 <div class="col-md-12">
                                     <div class="checkout-form-list">
                                         <label>Card Number</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" type="text" name="cardNum" required>
+                                   		<input type="hidden" name="secret" value="PlaceOrder">
                                     </div>
                                 </div>
-                                <!-- Company Name Input End -->
-                                <!-- First Name Input Start -->
                                 <div class="col-md-6">
                                     <div class="checkout-form-list">
                                         <label>Expire Date <span class="required">*</span></label>
-                                        <input class="form-control" type="date">
+                                        <input class="form-control" type="date" name="expDate" required>
                                     </div>
                                 </div>
-                                <!-- First Name Input End -->
-
-                                <!-- Last Name Input Start -->
                                 <div class="col-md-6">
                                     <div class="checkout-form-list">
                                         <label>CVV<span class="required">*</span></label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" type="text" name="cvv" required>
                                     </div>
                                 </div>
-                                <!-- Last Name Input End -->
 
 								 <h3 class="title">Address</h3>
 
-                                <!-- State or Country Input Start -->
                                 <div class="col-md-6">
                                     <div class="checkout-form-list">
                                         <label>State / County <span class="required">*</span></label>
-                                        <input placeholder="" type="text">
+                                        <input placeholder="" type="text" name="state" required>
                                     </div>
                                 </div>
-                                <!-- State or Country Input End -->
-
-                                <!-- Postcode or Zip Input Start -->
                                 <div class="col-md-6">
                                     <div class="checkout-form-list">
                                         <label>Postcode / Zip <span class="required">*</span></label>
-                                        <input placeholder="" type="text">
+                                        <input placeholder="" type="text" name="pincode" required>
                                     </div>
                                 </div>
-                                <!-- Postcode or Zip Input End -->
-
-                                <!-- Email Address Input Start -->
                                 <div class="col-md-6">
                                     <div class="checkout-form-list">
                                         <label>Email Address <span class="required">*</span></label>
-                                        <input placeholder="" type="email">
+                                        <input placeholder="" type="email" name="email" required>
                                     </div>
                                 </div>
-                                <!-- Email Address Input End -->
-
-                                <!-- Phone Number Input Start -->
                                 <div class="col-md-6">
                                     <div class="checkout-form-list">
                                         <label>Phone <span class="required">*</span></label>
-                                        <input type="text">
+                                        <input type="text" name="phone" required>
                                     </div>
                                 </div>
-                                <!-- Phone Number Input End -->
-
-                               
-
                             </div>
 
                             
                         </div>
-                    </form>
-                    <!-- Checkbox Form End -->
-
+                    
                 </div>
 
                 <div class="col-lg-6 col-12 mb-4">
@@ -173,8 +147,9 @@
 
                          <div class="payment-accordion-order-button">
                             <div class="order-button-payment">
-                                <button class="btn btn-primary btn-hover-secondary rounded-0 w-100">Place Order</button>
+                                <input type="submit" value="Place Order" class="btn btn-primary btn-hover-secondary rounded-0 w-100">
                             </div>
+                            </form>
                         </div>
                         <!-- Payment Accordion Order Button End -->
                     </div>
@@ -346,7 +321,63 @@
 
     <!-- Scripts -->
    <%@ include file="include/script.jsp" %>
-   
+    <script type="text/javascript">
+ 	$(document).ready(function(){
+ 		console.log("Page Ready..");
+ 		$("#myForm").on('submit',function(event){
+ 			event.preventDefault();
+			var formdata=$(this).serialize();
+ 			$.ajax({
+ 				url     :"OrderServlet",
+ 				method  :"Post",
+ 				data    :formdata,
+ 				success : function(response){
+ 					console.log(response);
+ 					if(response.trim()=="OrderPlaced"){
+ 						Swal.fire({
+		  					  position: 'center',
+		  					  icon: 'success',
+		  					  title: 'Congratulations Your Order Has Been Successfully Placed!',
+		  					  showConfirmButton: false,
+		  					  timer: 3000
+		  					})
+ 						
+ 					}else if(response.trim()=="paymentFailed"){
+ 						Swal.fire({
+			  		  		  position: 'center',
+			  		  		  icon: 'error',
+			  		  		  title: 'Payment Failed!',
+			  		  		  showConfirmButton: false,
+			  		  		  timer: 3000
+			  		  		})
+ 						
+ 					}else{
+ 						Swal.fire({
+			  		  		  position: 'center',
+			  		  		  icon: 'error',
+			  		  		  title: 'Order Not Placed!',
+			  		  		  showConfirmButton: false,
+			  		  		  timer: 3000
+			  		  		})
+ 					}
+ 					
+ 					$("#myForm")[0].reset();
+ 				},
+				error : function(response){
+				 	$.toast({
+							text: "Somthing went to wrong on server!", 
+							heading: 'Role', 
+							icon: 'error', 
+							hideAfter: 6000,
+							position: 'top-center', 
+							textAlign: 'left', 
+							loader: true
+						});
+				},
+ 			});
+ 		});
+ 	});
+ </script>
    <script type="text/javascript">
   $(document).ready(function(){
 		getCartProduct();

@@ -239,4 +239,22 @@ public class ProductDao {
 			}
 	   	 return list;
 	}
+
+	public void updateStock(int qty, int pid) {
+		Product p=getProductById(pid);
+		int finalQty=p.getAvailability()-qty;
+		try {
+			Connection con=DbConnection.getConnection();
+			String query="update products set availability=? where pid=?";
+			PreparedStatement ps=con.prepareStatement(query);
+			ps.setInt(1, finalQty);
+			ps.setInt(2, pid);
+			ps.executeUpdate();
+			ps.close();
+			con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
 }

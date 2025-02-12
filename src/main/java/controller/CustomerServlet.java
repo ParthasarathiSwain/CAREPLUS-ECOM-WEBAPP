@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
 import com.google.gson.Gson;
@@ -80,7 +81,30 @@ public class CustomerServlet extends HttpServlet {
 				out.print("fail");
 			}
 		  
-		}else if(secret.equals("viewAllCustomers")) {
+		}else if(secret.equals("MyAccountUpdate")) {
+			String  uName=request.getParameter("uName");
+			String  uEmail=request.getParameter("uEmail");
+			String  uPhone=request.getParameter("uPhone");
+			String  uAdd=request.getParameter("uAdd");
+			int uId=Integer.parseInt(request.getParameter("uId"));
+			
+			User u=new User();
+		    u.setUName(uName);
+		    u.setUEmail(uEmail);
+		    u.setUPhone(uPhone);
+		    u.setUAdd(uAdd);
+		    u.setUId(uId);
+		    CustomerDao ud=new CustomerDao();
+		    int msg=ud.UpdateMyAccount(u);
+		    HttpSession session=request.getSession(false);  
+		    if (msg>0) {
+		    	session.setAttribute("uName", uName);
+				out.print("done");
+			} else {
+				out.print("fail");
+			}
+		}
+		else if(secret.equals("viewAllCustomers")) {
 			CustomerDao ud=new CustomerDao();
 			List<User> list=ud.getAllCustomer();
 			GsonBuilder gsonBuilder = new GsonBuilder();

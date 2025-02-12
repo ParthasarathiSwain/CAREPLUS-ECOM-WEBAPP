@@ -13,4 +13,5 @@ public class Cart {
 	private int  qty;
 	private double  basePrice;
 	private double  totalPrice;
+	
 }

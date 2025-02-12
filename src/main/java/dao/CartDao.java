@@ -94,4 +94,19 @@ public class CartDao {
 		return status;
 	}
 
+	public void removeCartByUID(int uId) {
+		try {
+			Connection con=DbConnection.getConnection();
+			String query="delete from cart where uid=?";
+			PreparedStatement ps=con.prepareStatement(query);
+			ps.setInt(1, uId);
+			ps.executeUpdate();
+			ps.close();
+			con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+
 }
