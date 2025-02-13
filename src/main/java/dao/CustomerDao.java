@@ -145,4 +145,19 @@ public class CustomerDao {
 		return status;
 	}
 
+	public void updatePassword(String confPass, int uId) {
+		try {
+			   Connection con=DbConnection.getConnection();
+			   String query="update user set uPass=?,updatedDate=now() where roleId=2 and uId=? ";
+			   PreparedStatement  ps=con.prepareStatement(query);
+			   ps.setString(1, confPass);
+			   ps.setInt(2, uId);
+			   ps.executeUpdate();
+			   ps.close();
+			   con.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+	}
+
 }

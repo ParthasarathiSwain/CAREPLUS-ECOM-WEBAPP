@@ -177,6 +177,27 @@ public class CustomerServlet extends HttpServlet {
 				out.print("fail");
 			}
 		  
+		}else if(secret.equals("ChangePassword")) {
+			String  oldPass=request.getParameter("oldPass");
+			String  newPass=request.getParameter("newPass");
+			String  confPass=request.getParameter("confPass");
+			HttpSession session=request.getSession(false);  
+			int uId=(int)session.getAttribute("uId");
+			CustomerDao ud=new CustomerDao();
+			User user =ud.getCustomerById(uId);
+			String originalOldPass=user.getUPass();
+			
+			if(originalOldPass.equals(oldPass)) {
+				if (oldPass!=newPass&&newPass.equals(confPass)) {
+					ud.updatePassword(confPass,uId);
+					out.print("done");
+				} else {
+					out.print("oldPassShouldNotMatch");
+				}
+			}else {
+				out.print("invalidOldPass");
+			}
+			
 		}
 	}
 	

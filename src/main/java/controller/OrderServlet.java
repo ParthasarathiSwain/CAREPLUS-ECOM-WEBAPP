@@ -102,6 +102,27 @@ public class OrderServlet extends HttpServlet {
 			Gson  gson = gsonBuilder.create();
 			String JSONObject = gson.toJson(list);			    
 			out.print(JSONObject);	
+		}else if(secret.equals("viewOrdersByUserId")) {
+			HttpSession session=request.getSession(false);  
+			int uId=(int)session.getAttribute("uId");
+			OrderDao od=new OrderDao();
+			List<Order> list=od.getAllOrdersByUserId(uId);
+			GsonBuilder gsonBuilder = new GsonBuilder();
+			Gson  gson = gsonBuilder.create();
+			String JSONObject = gson.toJson(list);			    
+			out.print(JSONObject);	
+		}else if(secret.equals("getSpecificOrderDetailsByOid")) {
+			HttpSession session=request.getSession(false);  
+			int uId=(int)session.getAttribute("uId");
+			int oid=Integer.parseInt(request.getParameter("oid"));
+			
+			OrderDao od=new OrderDao();
+			Order order=od.getSpecificOrderDetailsByOid(oid,uId);
+			
+			GsonBuilder gsonBuilder = new GsonBuilder();
+			Gson  gson = gsonBuilder.create();
+			String JSONObject = gson.toJson(order);			    
+			out.print(JSONObject);	
 		}
 	}
 

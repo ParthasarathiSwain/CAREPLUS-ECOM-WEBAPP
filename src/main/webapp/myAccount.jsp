@@ -101,25 +101,29 @@
                                         <div class="myaccount-content">
                                             <h3 class="title">Change Password</h3>
                                             <div class="account-details-form">
-                                                <form id="changePassForm">
-                                                    <div class="single-input-item mb-3">
-                                                        <label for="oldPass" class="required mb-1">Old Password</label>
-                                                        <input type="password" id="oldPass" name="" required />
-                                                    </div>
-                                                    <div class="single-input-item mb-3">
-                                                        <label for="newPass" class="required mb-1">New Password</label>
-                                                        <input type="password" id="newPass" required/>
-                                                    </div>
-                                                    <div class="single-input-item mb-3">
-                                                        <label for="confPass" class="required mb-1">Confirm Password</label>
-                                                        <input type="password" id="confPass" name="" required />
-                                                    </div>
-                                                    
-                                                    <div class="single-input-item single-item-button">
-                                                        <input  type="submit" value="Save Changes" class="btn btn btn-dark btn-hover-primary rounded-0">
-                                                    </div>
-                                                </form>
-                                            </div>
+											    <form id="changePassForm">
+											        <div class="single-input-item mb-3">
+											            <label for="oldPass" class="required mb-1">Old Password</label>
+											            <input type="password" id="oldPass" name="oldPass" required />
+											            <span id="oldPassError" class="text-danger"></span>
+											            <input type="hidden" name="secret" value="ChangePassword">
+											        </div>
+											        <div class="single-input-item mb-3">
+											            <label for="newPass" class="required mb-1">New Password</label>
+											            <input type="password" id="newPass" name="newPass" required />
+											            <span id="newPassError" class="text-danger"></span>
+											        </div>
+											        <div class="single-input-item mb-3">
+											            <label for="confPass" class="required mb-1">Confirm Password</label>
+											            <input type="password" id="confPass" name="confPass" required />
+											            <span id="confPassError" class="text-danger"></span>
+											        </div>
+											
+											        <div class="single-input-item single-item-button">
+											            <input type="submit" value="Save Changes" class="btn btn-dark btn-hover-primary rounded-0">
+											        </div>
+											    </form>
+											</div>
                                         </div>
                                     </div>
                                     
@@ -343,8 +347,105 @@
     <!-- Mobile Menu End -->
 
     <%@include file="include/script.jsp" %>
-   
- 	
+    
+    
+    <script type="text/javascript">
+ 	$(document).ready(function(){
+ 		console.log("Page Ready..");
+ 		$("#changePassForm").on('submit',function(event){
+ 			event.preventDefault();
+			var formdata=$(this).serialize();
+ 			$.ajax({
+ 				url     :"CustomerServlet",
+ 				method  :"Post",
+ 				data    :formdata,
+ 				success : function(response){
+ 					if (response.trim()=="done") {
+						$.toast({
+							text: "Password Updated Successfully!!!", 
+							heading: 'Password', 
+							icon: 'success', 
+							hideAfter: 6000,
+							position: 'top-center', 
+							textAlign: 'left', 
+							loader: true
+						});
+				} else if(response.trim()=="oldPassShouldNotMatch") {
+					$.toast({
+							text: "Password Should Not Match !!", 
+							heading: 'Password', 
+							icon: 'error', 
+							hideAfter: 6000,
+							position: 'top-center', 
+							textAlign: 'left', 
+							loader: true
+						});
+				}else{
+					$.toast({
+						text: "Invalid Old Password!!", 
+						heading: 'Password', 
+						icon: 'error', 
+						hideAfter: 6000,
+						position: 'top-center', 
+						textAlign: 'left', 
+						loader: true
+					});
+				}
+					
+ 					$("#changePassForm")[0].reset();
+ 				},
+				error : function(response){
+				 	$.toast({
+							text: "Somthing went to wrong on server!", 
+							heading: 'Password', 
+							icon: 'error', 
+							hideAfter: 6000,
+							position: 'top-center', 
+							textAlign: 'left', 
+							loader: true
+						});
+				},
+ 			});
+ 		});
+ 	});
+ </script>
+ 	<script>
+    const oldPass = document.getElementById("oldPass");
+    const newPass = document.getElementById("newPass");
+    const confPass = document.getElementById("confPass");
+
+    const oldPassError = document.getElementById("oldPassError");
+    const newPassError = document.getElementById("newPassError");
+    const confPassError = document.getElementById("confPassError");
+
+    function validatePasswords() {
+        oldPassError.textContent = "";
+        newPassError.textContent = "";
+        confPassError.textContent = "";
+
+        // Check if old password and new password are the same
+        if (oldPass.value && newPass.value && oldPass.value === newPass.value) {
+            oldPassError.textContent = "New password cannot be the same as old password.";
+        }
+
+        // Check if new password and confirm password match
+        if (newPass.value && confPass.value && newPass.value !== confPass.value) {
+            confPassError.textContent = "Confirm password does not match new password.";
+        }
+    }
+
+    oldPass.addEventListener("input", validatePasswords);
+    newPass.addEventListener("input", validatePasswords);
+    confPass.addEventListener("input", validatePasswords);
+
+    document.getElementById("changePassForm").addEventListener("submit", function(event) {
+        validatePasswords();
+
+        if (oldPassError.textContent || newPassError.textContent || confPassError.textContent) {
+            event.preventDefault(); // Stop form submission if validation fails
+        }
+    });
+</script>
  		<script type="text/javascript">
   	$(document).ready(function(){
   		getData();
@@ -353,7 +454,7 @@
   		$.ajax({
   			url:"OrderServlet",
   			method:"Post",
-  			data:{"secret":"viewOrders"},
+  			data:{"secret":"viewOrdersByUserId"},
   			dataType:"json",
   			success : function (response){
   				let s="";
@@ -373,7 +474,7 @@
   						}else{
   							s+="<td><span class='badge btn-sm btn-warning w-100'>Pending</span></td>";
   						}
-  						s+="<td><a href='#' class='btn btn btn-dark btn-hover-primary rounded-0'><i class='fa fa-cloud-download me-1'></i>Download File</a></td>";
+  						s+="<td><a href='invoice.jsp?oId="+response[key].oid+"' class='btn btn btn-dark btn-hover-primary rounded-0'><i class='fa fa-cloud-download me-1'></i>Download File</a></td>";
   						s+="</tr>";
   						i++;
   					}
