@@ -70,7 +70,7 @@
                                             <label class="custom-control-label" for="rememberMe">Remember Me</label>
                                         </div>
                                     </div>
-                                    <a href="#" class="forget-pwd mb-3">Forget Password?</a>
+                                    <a href="forgotPassword.jsp" class="forget-pwd mb-3">Forget Password?</a>
                                 </div>
                             </div>
 

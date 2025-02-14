@@ -1,4 +1,9 @@
-
+<%
+if (session.getAttribute("uName") == null || session.getAttribute("uName").equals(""))
+{
+	response.sendRedirect("../login.jsp");
+}
+%>
 <!doctype html>
 
 <html lang="en" class="semi-dark">

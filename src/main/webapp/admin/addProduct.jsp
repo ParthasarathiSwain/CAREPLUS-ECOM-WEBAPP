@@ -1,3 +1,9 @@
+<%
+if (session.getAttribute("uName") == null || session.getAttribute("uName").equals(""))
+{
+	response.sendRedirect("../login.jsp");
+}
+%>
 <%@page import="utility.DbConnection"%>
 <%@page import="java.sql.*"%>
 
