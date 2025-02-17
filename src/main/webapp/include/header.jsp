@@ -9,7 +9,7 @@
                     <!-- Header Top Message Start -->
                     <div class="col-12">
                         <div class="header-top-msg-wrapper text-center">
-                            <p class="header-top-message text-center">Up to 50% off for <strong>Winter</strong> Collections <a href="shop.html" class="btn btn-hover-dark btn-secondary">Shop Now</a></p>
+                            <p class="header-top-message text-center">Up to 50% off <a href="shop.jsp" class="btn btn-hover-dark btn-secondary">Shop Now</a></p>
                             <div class="header-top-close-btn">
                                 <button class="top-close-btn"><i class="pe-7s-close"></i></button>
                             </div>
@@ -50,8 +50,8 @@
                                     <li class="has-children position-static">
                                         <a href="shop.jsp">Shop </a>
                                      </li>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="about.jsp">About</a></li>
+                                    <li><a href="contact.jsp">Contact</a></li>
                                     
                                   <%    	
                                     }else{
@@ -62,8 +62,8 @@
                                     <li class="has-children position-static">
                                         <a href="shop.jsp">Shop </a>
                                      </li>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="about.jsp">About</a></li>
+                                    <li><a href="contact.jsp">Contact</a></li>
                                     <li class="has-children">
                                         <a href="myAccount.jsp">My Account </a>
                                     </li>

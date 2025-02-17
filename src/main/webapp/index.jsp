@@ -28,7 +28,7 @@
                         <div class="hero-slide-content">
                             <h2 class="title m-0">Get -30% off</h2>
                             <p>Latest baby product & toy collections.</p>
-                            <a href="shop.html" class="btn btn-primary btn-hover-light">Shop Now</a>
+                            <a href="shop.jsp" class="btn btn-primary btn-hover-light">Shop Now</a>
                         </div>
                     </div>
                 </div>
@@ -40,7 +40,7 @@
                     <div class="container">
                         <div class="hero-slide-content">
                             <h2 class="title m-0"> New Arrivals <br />Get flat 50% off </h2>
-                            <a href="shop.html" class="btn btn-primary btn-hover-light">Shop Now</a>
+                            <a href="shop.jsp" class="btn btn-primary btn-hover-light">Shop Now</a>
                         </div>
                     </div>
                 </div>
@@ -51,7 +51,7 @@
                     <div class="container">
                         <div class="hero-slide-content">
                             <h2 class="title m-0"> Latest Arrivals <br />Get flat Up to 50% off </h2>
-                            <a href="shop.html" class="btn btn-primary btn-hover-light">Shop Now</a>
+                            <a href="shop.jsp" class="btn btn-primary btn-hover-light">Shop Now</a>
                         </div>
                     </div>
                 </div>
@@ -77,16 +77,16 @@
 
                 <!-- Banner Start -->
                 <div class="col-md-6 col-12 mb-6 pe-lg-2 pe-md-3">
-                    <a href="shop.html" class="banner" data-aos="fade-up" data-aos-delay="200">
-                        <img src="assets/images/banner/1.png" alt="Banner Image" />
+                    <a href="shop.jsp" class="banner" data-aos="fade-up" data-aos-delay="200">
+                        <img src="assets/images/banner/111.png" alt="Banner Image" />
                     </a>
                 </div>
                 <!-- Banner End -->
 
                 <!-- Banner Start -->
                 <div class="col-md-6 col-12 mb-6 ps-lg-2 ps-md-3">
-                    <a href="shop.html" class="banner" data-aos="fade-up" data-aos-delay="400">
-                        <img src="assets/images/banner/2.png" alt="Banner Image" />
+                    <a href="shop.jsp" class="banner" data-aos="fade-up" data-aos-delay="400">
+                        <img src="assets/images/banner/222.png" alt="Banner Image" />
                     </a>
                 </div>
                 <!-- Banner End -->
@@ -115,16 +115,16 @@
                         <div class="swiper-container testimonial-gallery-thumbs">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <img src="assets/images/testimonial/thumb-1.png" alt="Product Image">
+                                    <img src="assets/images/testimonial/1.png" alt="Product Image">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="assets/images/testimonial/thumb-2.png" alt="Product Image">
+                                    <img src="assets/images/testimonial/2.png" alt="Product Image">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="assets/images/testimonial/thumb-3.png" alt="Product Image">
+                                    <img src="assets/images/testimonial/3.png" alt="Product Image">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="assets/images/testimonial/thumb-4.png" alt="Product Image">
+                                    <img src="assets/images/testimonial/4.png" alt="Product Image">
                                 </div>
                             </div>
                         </div>
@@ -225,7 +225,7 @@
                                         <!-- Blog Thumb Start -->
                                         <div class="blog-thumb">
                                             <a href="blog-details.html">
-                                                <img class="fit-image" src="assets/images/blog/blog-medium/1.jpg" alt="Blog Image">
+                                                <img class="fit-image" src="assets/images/blog/blog-medium/1.png" alt="Blog Image">
                                             </a>
                                         </div>
                                         <!-- Blog Thumb End -->
@@ -249,7 +249,7 @@
                                         <!-- Blog Thumb Start -->
                                         <div class="blog-thumb">
                                             <a href="blog-details.html">
-                                                <img class="fit-image" src="assets/images/blog/blog-medium/2.jpg" alt="Blog Image">
+                                                <img class="fit-image" src="assets/images/blog/blog-medium/4.png" alt="Blog Image">
                                             </a>
                                         </div>
                                         <!-- Blog Thumb End -->
@@ -273,7 +273,7 @@
                                         <!-- Blog Thumb Start -->
                                         <div class="blog-thumb">
                                             <a href="blog-details.html">
-                                                <img class="fit-image" src="assets/images/blog/blog-medium/3.jpg" alt="Blog Image">
+                                                <img class="fit-image" src="assets/images/blog/blog-medium/2.png" alt="Blog Image">
                                             </a>
                                         </div>
                                         <!-- Blog Thumb End -->
@@ -323,37 +323,37 @@
 
                                     <!-- Single Brand Logo Start -->
                                     <div class="swiper-slide single-brand-logo">
-                                        <a href="#"><img src="assets/images/brand-logo/1.png" alt="Brand Logo"></a>
+                                        <a href="#"><img src="assets/images/brand-logo/11.png" alt="Brand Logo"></a>
                                     </div>
                                     <!-- Single Brand Logo End -->
 
                                     <!-- Single Brand Logo Start -->
                                     <div class="swiper-slide single-brand-logo">
-                                        <a href="#"><img src="assets/images/brand-logo/2.png" alt="Brand Logo"></a>
+                                        <a href="#"><img src="assets/images/brand-logo/22.png" alt="Brand Logo"></a>
                                     </div>
                                     <!-- Single Brand Logo End -->
 
                                     <!-- Single Brand Logo Start -->
                                     <div class="swiper-slide single-brand-logo">
-                                        <a href=""><img src="assets/images/brand-logo/3.png" alt="Brand Logo"></a>
+                                        <a href=""><img src="assets/images/brand-logo/33.png" alt="Brand Logo"></a>
                                     </div>
                                     <!-- Single Brand Logo End -->
 
                                     <!-- Single Brand Logo Start -->
                                     <div class="swiper-slide single-brand-logo">
-                                        <a href="#"><img src="assets/images/brand-logo/4.png" alt="Brand Logo"></a>
+                                        <a href="#"><img src="assets/images/brand-logo/44.png" alt="Brand Logo"></a>
                                     </div>
                                     <!-- Single Brand Logo End -->
 
                                     <!-- Single Brand Logo Start -->
                                     <div class="swiper-slide single-brand-logo">
-                                        <a href="#"><img src="assets/images/brand-logo/5.png" alt="Brand Logo"></a>
+                                        <a href="#"><img src="assets/images/brand-logo/55.png" alt="Brand Logo"></a>
                                     </div>
                                     <!-- Single Brand Logo End -->
 
                                     <!-- Single Brand Logo Start -->
                                     <div class="swiper-slide single-brand-logo">
-                                        <a href="#"><img src="assets/images/brand-logo/6.png" alt="Brand Logo"></a>
+                                        <a href="#"><img src="assets/images/brand-logo/11.png" alt="Brand Logo"></a>
                                     </div>
                                     <!-- Single Brand Logo End -->
 
@@ -563,7 +563,7 @@
                             <li class="has-children">
                                 <a href="#">Shop <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                 <ul class="dropdown">
-                                    <li><a href="shop.html">Shop Grid</a></li>
+                                    <li><a href="shop.jsp">Shop Grid</a></li>
                                     <li><a href="shop-left-sidebar.html">Shop Left Sidebar</a></li>
                                     <li><a href="shop-right-sidebar.html">Shop Right Sidebar</a></li>
                                     <li><a href="shop-list-fullwidth.html">Shop List Fullwidth</a></li>

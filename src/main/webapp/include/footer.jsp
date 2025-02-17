@@ -7,7 +7,7 @@
                     <div class="col-12 col-sm-6 col-lg-3 mb-8">
                         <div class="single-footer-widget">
                             <h1 class="widget-title">About Us</h1>
-                            <p class="desc-content">We are a team of designers and developers that create high quality wordpress, shopify, Opencart</p>
+                            <p class="desc-content">CarePlus is a trusted online medicine ordering platform dedicated to providing high-quality healthcare solutions at your fingertips. Our team of healthcare professionals, pharmacists, and technology experts work together to ensure a seamless and secure medicine-buying experience.</p>
                             <!-- Soclial Link Start -->
                             <div class="widget-social justify-content-start mb-n2">
                                 <a title="Facebook" href="#"><i class="fa fa-facebook-f"></i></a>
@@ -24,8 +24,8 @@
                             <h2 class="widget-title">Contact Us</h2>
                             <ul class="contact-links">
                                 <li><i class="pe-7s-home"></i> <span>Your address goes here</span> </li>
-                                <li><i class="pe-7s-mail"></i><a href="mailto:info@example.com"> info@example.com</a></li>
-                                <li><i class="pe-7s-call"></i><a href="tel:+012-3456-789"> +012 3456 789</a></li>
+                                <li><i class="pe-7s-mail"></i><a href=""> support@careplus.com</a></li>
+                                <li><i class="pe-7s-call"></i><a href=""> +012 3456 789</a></li>
                             </ul>
                         </div>
                     </div>
@@ -75,7 +75,7 @@
                 <div class="row align-items-center">
                     <div class="col-12 text-center">
                         <div class="copyright-content">
-                            <p class="mb-0">© 2022 <strong>Toyqo </strong> Made with <i class="fa fa-heart text-danger"></i> by <a href="https://hasthemes.com/">HasThemes.</a></p>
+                            <p class="mb-0">© 2025 <strong>Careplus </strong> Made with <i class="fa fa-heart text-danger"></i> by <a href="">Opentechz.</a></p>
                         </div>
                     </div>
                 </div>
